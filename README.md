@@ -1,0 +1,3 @@
+# StackChat
+
+Welcome to StackChat!
