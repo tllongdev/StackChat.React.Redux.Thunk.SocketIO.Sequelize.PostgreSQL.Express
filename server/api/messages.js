@@ -23,10 +23,10 @@ router.post('/', async (req, res, next) => {
   
   const message = Message.build(req.body);
   message.setAuthor(author, { save: false });
-  const savedMessage = await message.save().catch(next);
-  savedMessage.toJSON();
-  savedMessage.author = author;
-  res.json(message);
+  await message.save().catch(next);
+  const returnMessage = message.toJSON();
+  returnMessage.author = author;
+  res.json(returnMessage);
 });
 
 // PUT /api/messages
