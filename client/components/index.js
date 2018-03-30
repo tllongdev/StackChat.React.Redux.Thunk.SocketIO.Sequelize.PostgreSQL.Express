@@ -1,11 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
-import store from '../store'
-
-ReactDOM.render(
-  <Provider store={store}>
-    <div>StackChat</div>
-  </Provider>,
-  document.getElementById('app')
-)
+// so that we can say
+// import { Main } from './components';
+// instead of
+// import { Main } from './components/Main;
+export { default as Main } from './Main';

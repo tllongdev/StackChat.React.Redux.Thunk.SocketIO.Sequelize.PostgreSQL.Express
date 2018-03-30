@@ -1,9 +1,9 @@
-import io from 'socket.io-client'
+import io from 'socket.io-client';
 
-const socket = io(window.location.origin)
+const socket = io(window.location.origin);
 
 socket.on('connect', () => {
-  console.log('Connected!')
-})
+  console.log('I am now connected to the server!');
+});
 
-export default socket
+export default socket;

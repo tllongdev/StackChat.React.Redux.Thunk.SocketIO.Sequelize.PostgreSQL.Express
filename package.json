@@ -1,38 +1,42 @@
 {
   "name": "stackchat",
   "version": "1.0.0",
-  "description": "",
+  "description": "A chatty appy chat app",
   "main": "index.js",
   "scripts": {
-    "start-server": "nodemon server -e js,html,css --ignore public",
-    "start": "npm run build-watch & npm run start-server",
-    "build": "webpack",
-    "build-watch": "webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack -w & nodemon server -w server",
+    "start-server": "nodemon server",
+    "build-client": "webpack",
+    "seed": "node seed.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
-    "pg": "^7.4.1",
+    "axios": "^0.15.3",
+    "body-parser": "^1.16.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.1",
+    "morgan": "^1.8.1",
+    "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^5.0.7",
-    "redux": "^3.7.2",
-    "sequelize": "^4.34.1",
-    "socket.io": "^2.0.4"
+    "react-router-dom": "^4.0.0",
+    "sequelize": "^4.4.0",
+    "socket.io": "^1.7.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.3",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "chalk": "^2.3.1",
-    "nodemon": "^1.17.1",
-    "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.9"
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "css-loader": "^0.26.2",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.11.0",
+    "sass-loader": "^6.0.2",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1"
   }
 }

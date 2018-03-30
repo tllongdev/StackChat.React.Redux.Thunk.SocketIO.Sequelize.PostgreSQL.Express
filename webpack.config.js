@@ -1,20 +1,30 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: ['babel-polyfill', './client/index.js'],
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'public')
+    path: __dirname,
+    filename: './public/bundle.js'
   },
-  mode: process.env.NODE_ENV || 'development',
-  devtool: 'source-maps',
+  devtool: 'source-map',
   module: {
-    rules: [{
-      test: /js$/,
-      exclude: /node_modules/,
-      use: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        include: [
+          path.resolve(__dirname, 'client')
+        ],
         loader: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
-    }]
+    ]
   }
-}
+};
+
