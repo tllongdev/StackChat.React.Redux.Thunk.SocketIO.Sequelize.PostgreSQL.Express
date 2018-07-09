@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
     const channels = await Channel.findAll();
     res.json(channels);
   } catch (err) {
-    next(err)
+    next(err);
   }
 });
 
@@ -41,6 +41,6 @@ router.delete('/:channelId', async (req, res, next) => {
     await Channel.destroy({ where: { id } });
     res.status(204).end();
   } catch (err) {
-    next(err)
+    next(err);
   }
 });
