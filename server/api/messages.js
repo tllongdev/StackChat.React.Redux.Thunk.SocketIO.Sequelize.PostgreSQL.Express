@@ -41,7 +41,7 @@ router.put('/:messageId', async (req, res, next) => {
   try {
     const messageId = req.params.messageId;
     const message = await Message.findById(messageId)
-    await message.update(req.body).catch(next);
+    await message.update(req.body);
     res.status(204).end();
   } catch (err) {
     next(err);
