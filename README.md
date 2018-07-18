@@ -2,10 +2,17 @@
 
 A chatty chat appy app.
 
-## Setting up
+## Setup
 
-* `npm install` (or `yarn install`)
-* `npm run seed`
+### MacOS/Linux
+
+* `npm install`
 * `npm start`
+* Open another terminal window; from there, `npm run seed` to seed the database
 
-The `start` command will run both the `webpack` process (in watch mode) to build you client-side javascript files, and the Node process for your server with `nodemon`.
+### Windows
+
+* `npm install`
+* `npm run build-watch` to start the webpack process
+* Open another terminal window; from there, `npm run start-server` to start the server process
+* Open another terminal window; from there, `npm run seed` to seed the database

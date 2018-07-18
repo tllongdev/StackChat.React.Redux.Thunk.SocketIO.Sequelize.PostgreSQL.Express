@@ -4,16 +4,15 @@
   "description": "A chatty appy chat app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -w & nodemon server -w server",
-    "start-server": "nodemon server",
-    "build-client": "webpack",
+    "start": "npm run start-server & npm run build-watch",
+    "start-server": "nodemon server -w server",
+    "build-watch": "webpack -w",
     "seed": "node seed.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
-    "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
     "express": "^4.14.1",
     "morgan": "^1.8.1",
@@ -26,15 +25,16 @@
     "socket.io": "^1.7.2"
   },
   "devDependencies": {
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "css-loader": "^0.26.2",
-    "nodemon": "^1.11.0",
-    "style-loader": "^0.13.2",
-    "webpack": "^2.2.1"
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "nodemon": "^1.18.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
   }
 }
