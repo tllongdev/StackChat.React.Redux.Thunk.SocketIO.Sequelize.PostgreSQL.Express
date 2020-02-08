@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import axios from 'axios';
 
 // Action Types
 const GOT_MESSAGES_FROM_SERVER = 'GOT_MESSAGES_FROM_SERVER';
@@ -10,6 +11,12 @@ const gotMessagesFromServer = messages => ({
   type: GOT_MESSAGES_FROM_SERVER,
   messages
 });
+
+// Thunk Creator
+export const fetchMessages = () => async dispatch => {
+  const { data: messages } = await axios.get('/api/messages');
+  dispatch(gotMessagesFromServer(messages));
+};
 
 //Reducer
 const initialState = {
