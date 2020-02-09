@@ -19,7 +19,7 @@ export const MessagesList = props => {
           <Message message={message} key={message.id} />
         ))}
       </ul>
-      <NewMessageEntry />
+      <NewMessageEntry channelId={channelId} />
     </div>
   );
 };
