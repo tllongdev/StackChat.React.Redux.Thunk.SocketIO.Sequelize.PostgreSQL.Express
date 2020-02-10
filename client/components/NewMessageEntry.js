@@ -15,11 +15,11 @@ export class NewMessageEntry extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const message = e.target.content.value;
     this.props.submitMessage({
       content: this.props.message,
       channelId: this.props.channelId
     });
+    e.target.content.value = '';
   }
 
   render() {
